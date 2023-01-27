@@ -10,7 +10,17 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        Alegreya:'Alegreya Sans',
+        Montserrat:'Montserrat',
+        OpenSans:'Open Sans',
+        Lato:'Lato',
+        Roboto:'Roboto',
+        RobotoSlab:'Roboto Slab'
+
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

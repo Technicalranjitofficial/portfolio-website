@@ -5,8 +5,8 @@ const Info = () => {
     <div className="flex lg:flex justify-evenly lg:justify-evenly mt-6">
      <div className="flex flex-col md:flex-row justify-center items-center">
      <div className="flex flex-col ">
-        <h1 className="font-bold text-4xl text-yellow-100">Hi there, I'm <span className="text-cyan-500">Ranjit</span></h1>
-        <p className="my-3 text-xl text-white">
+        <h1 className="font-bold text-4xl text-yellow-100 font-Montserrat">Hi there, I'm <span className="text-cyan-500">Ranjit</span></h1>
+        <p className="my-3 text-sm md:text-xl text-white font-RobotoSlab">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
           minus, facere ullam eius placeat harum tenetur doloremque alias ad,
           ipsam rem vero repellat eaque aperiam natus quas beatae distinctio

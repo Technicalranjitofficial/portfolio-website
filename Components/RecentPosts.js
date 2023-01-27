@@ -5,7 +5,7 @@ const RecentPosts = () => {
     <div className="flex justify-center mt-6">
       <div className="">
         <div className="flex justify-between">
-          <span className="text-white font-bold text-2xl ">Recent <span className="text-cyan-400">Posts</span></span>
+          <span className="text-white font-bold text-xl md:text-2xl font-Alegreya">Recent <span className="text-cyan-400">Posts</span></span>
           <span className="text-white font-semibold text-xl">Next</span>
         </div>
 
@@ -19,9 +19,9 @@ const RecentPosts = () => {
                 alt="img"
               />
             </div>
-            <h1 className="text-center font-semibold text-slate-200 text-xl">Typography Example</h1>
-            <span className="items-center flex justify-center text mt-1 text-xs text-slate-400">Feb 6,2020</span>
-            <p className="mt-1 text-center px-2  text-sm text-slate-200 font-mono line-clamp-3 ">
+            <h1 className="text-center font-semibold text-slate-300 text-md md:text-xl font-Roboto">Typography Example</h1>
+            <span className="items-center flex justify-center text mt-1 text-xs text-slate-400 font-Lato">Feb 6,2020</span>
+            <p className="mt-1 text-center px-2 text-xs md:text-sm text-gray-300  line-clamp-3 font-RobotoSlab">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
               aperiam corporiscorporiscorporiscorporiscorporis, corrupti, ex ea quam qui, assumenda dolore cum .
               aperiam corporis, corrupti, ex ea quam qui, assumenda dolore cum .
@@ -63,7 +63,7 @@ const RecentPosts = () => {
             </div>
             <h1 className="text-center font-semibold text-slate-200 text-xl">Typography Example</h1>
             <span className="items-center flex justify-center text mt-1 text-xs text-slate-400">Feb 6,2020</span>
-            <p className="mt-1 text-center px-2  text-sm text-slate-200 font-mono line-clamp-3 ">
+            <p className="mt-1 text-center px-2  text-sm text-slate-200 font- line-clamp-3 ">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
               aperiam corporiscorporiscorporiscorporiscorporis, corrupti, ex ea quam qui, assumenda dolore cum .
               aperiam corporis, corrupti, ex ea quam qui, assumenda dolore cum .

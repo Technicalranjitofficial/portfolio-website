@@ -27,7 +27,7 @@ const RecentPosts = ({ blogs }) => {
 
         <div className="grid mt-3 grid-cols-1  md:grid-cols-3 gap-5">
          {blogs && blogs.map((val,index)=>{
-          return  <Link 
+          return  <Link key={val.slug.current}
            href={`/posts/${val.slug.current}`} className="hover:translate-y-1">
           <div className="overflow-hidden rounded-md min-h-full bg-slate-800 justify-center">
             <div className=" aspect-w-3 aspect-h-2">

@@ -51,7 +51,7 @@ const RecentProjects = ({ projects, client }) => {
                           switch (tg) {
                             case "Javascript":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2  animate-pulse w-8 transition-all cursor-pointer"
                                   src="/assets/images/js.svg"
                                   title="Nodejs"
@@ -61,7 +61,7 @@ const RecentProjects = ({ projects, client }) => {
                               );
                             case "ReactJs":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2 animate-spin w-8 transition-all cursor-pointer"
                                   src="/assets/images/react.svg"
                                   title="ReactJs"
@@ -72,7 +72,7 @@ const RecentProjects = ({ projects, client }) => {
 
                             case "NextJs":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2 animate-pulse fill-red-600 w-8 transition-all cursor-pointer"
                                   src="/assets/images/next3.png"
                                   title="NextJs"
@@ -82,7 +82,7 @@ const RecentProjects = ({ projects, client }) => {
                               );
                             case "Socket.io":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2 animate-spin w-8 transition-all cursor-pointer"
                                   src="/assets/images/Socketio.svg"
                                   alt="socket"
@@ -93,7 +93,7 @@ const RecentProjects = ({ projects, client }) => {
                               );
                             case "Python":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2 animate-spin w-8 transition-all cursor-pointer"
                                   src="/assets/images/py.svg"
                                   title="Python"
@@ -103,7 +103,7 @@ const RecentProjects = ({ projects, client }) => {
                               );
                             case "Tailwind":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2 animate-pulse w-8 transition-all cursor-pointer"
                                   src="/assets/images/tailwind2.svg"
                                   title="Tailwind"
@@ -113,7 +113,7 @@ const RecentProjects = ({ projects, client }) => {
                               );
                             case "Bootstrap":
                               return (
-                                <img
+                                <img key={ind}
                                   className=" mr-2 animate-spin w-8 transition-all cursor-pointer"
                                   src="/assets/images/react.svg"
                                   title="Bootstap"

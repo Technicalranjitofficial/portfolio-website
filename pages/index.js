@@ -25,7 +25,7 @@ const client = createClient({
 export default function Home({blogs,projects}) {
   return (
     <>
-  <div className='bg-slate-900 relative'>
+  <div className='bg-slate-900 '>
    
     <div className='mx-auto max-w-screen-lg px-3 py-6'>
 <NavBar/>

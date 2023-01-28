@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const NavBar = () => {
@@ -7,7 +8,7 @@ const NavBar = () => {
     <span className='text-cyan-500 font-bold text-3xl font-Roboto '>Ranjit Das</span>
    </div>
    <div className='items-center  hidden sm:flex'>
-    <a href="" className='mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya'>Home</a>
+    <Link href="/ind" className='mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya'>Home</Link>
     <a href="" className='mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya'>About</a>
     <a href="" className='mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya'>CV</a>
    </div>

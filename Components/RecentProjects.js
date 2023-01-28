@@ -32,7 +32,7 @@ const RecentProjects = ({projects,client}) => {
                 {val.tags.map((tg,ind)=>{
                   switch (tg) {
                     case "Javascript":
-                     return <img  className=" mr-2 animate-spin animate-pulse w-8 transition-all cursor-pointer" src="/assets/images/js.svg" title="Nodejs" data-bs-toggle="tooltip" data-bs-placement="top"/>
+                     return <img  className=" mr-2 animate-pulse animate-pulse w-8 transition-all cursor-pointer" src="/assets/images/js.svg" title="Nodejs" data-bs-toggle="tooltip" data-bs-placement="top"/>
                 case "ReactJs":
                      return <img  className=" mr-2 animate-spin w-8 transition-all cursor-pointer" src="/assets/images/react.svg" title="ReactJs" data-bs-toggle="tooltip" data-bs-placement="top"/>
 

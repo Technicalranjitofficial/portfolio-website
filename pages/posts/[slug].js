@@ -2,13 +2,12 @@ import React from 'react'
 
 import { createClient } from 'next-sanity';
 
-import { useRouter } from 'next/router';
 import NavBar from '@/Components/NavBar';
 import Post from '@/Components/post/Post';
 import NewsLetter from '@/Components/NewsLetter';
 import Copyright from '@/Components/Copyright';
 
-require("dotenv").config();
+// require("dotenv").config();
 
 const client = createClient({
   projectId: process.env.PROJECT_ID,
@@ -18,9 +17,7 @@ const client = createClient({
 });
 const Posts = ({blogs,user}) => {
   
-    const router = useRouter();
-    const {slug} = router.query;
-    console.log("slug",slug);
+
   return (
     <>
     <div className='bg-slate-900'>

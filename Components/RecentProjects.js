@@ -1,9 +1,18 @@
 import React from "react";
+import { createClient} from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import { motion } from "framer-motion";
-const RecentProjects = ({ projects, client }) => {
-  
+const RecentProjects = ({ projects,client }) => {
+
+
+  // const client = createClient({
+  //   projectId:process.env.PROJECT_ID&& process.env.PROJECT_ID,
+  //   dataset: process.env.DATASET,
+  //   apiVersion: "2022-03-25",
+  //   useCdn: true
+  // });
+
   const builder = imageUrlBuilder(client);
   // const builder = imageUrlBuilder(client);
   function urlFor(source) {

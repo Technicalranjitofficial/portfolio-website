@@ -13,7 +13,7 @@ import Copyright from '@/Components/Copyright'
 import { createClient } from 'next-sanity';
 import RecentPosts from '@/Components/post/RecentPosts'
 const inter = Inter({ subsets: ['latin'] })
-require("dotenv").config();
+// require("dotenv").config();
 
 const client = createClient({
   projectId: process.env.PROJECT_ID,
@@ -32,7 +32,7 @@ export default function Home({blogs,projects}) {
     <div className='mx-auto max-w-screen-lg px-3 py-6'>
 <NavBar/>
 <Info/>
-<RecentProjects projects={projects} client={client}/>
+<RecentProjects projects={projects} client = {client}/>
 {blogs.length>0 && <RecentPosts blogs={blogs}/>}
 <NewsLetter/>
 <div className='border-t mt-7 border-gray-600 '></div>
@@ -44,9 +44,10 @@ export default function Home({blogs,projects}) {
 }
 
 export async function getServerSideProps(){
+ 
   const blogs = await client.fetch(`*[_type == "blog"]`);
   const projects = await client.fetch(`*[_type == "Project"]`)
-  console.log("project",projects);
+  // console.log("project",projects);
   return{
     props:{
       blogs,

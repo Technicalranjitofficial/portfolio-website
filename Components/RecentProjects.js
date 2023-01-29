@@ -2,9 +2,10 @@ import React from "react";
 import { createClient} from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion,useDragControls } from "framer-motion";
 const RecentProjects = ({ projects,client }) => {
 
+  const control = useDragControls();
 
   // const client = createClient({
   //   projectId:process.env.PROJECT_ID&& process.env.PROJECT_ID,
@@ -18,6 +19,13 @@ const RecentProjects = ({ projects,client }) => {
   function urlFor(source) {
     return builder.image(source);
   }
+
+//   const attributes = isMobile ? {
+//     drag: "x",
+//     dragConstraints: { left: 0, right: 0 },
+//     animate: { x: myVariable },
+//     onDragEnd: myFunction
+// } : { onMouseOver, onMouseLeave };
   return (
     <div className="flex justify-center mt-6">
       <div className="flex flex-col w-full">
@@ -27,7 +35,9 @@ const RecentProjects = ({ projects,client }) => {
         {projects &&
           projects.map((val, index) => {
             return (
-              <motion.div drag
+              <motion.div 
+
+              
                 key={index}
                 className="mt-3 hover:scale-95 md:hover:scale-100 bg-slate-800 relative group   flex items-center rounded-md md:flex-row   flex-col w-full "
               >

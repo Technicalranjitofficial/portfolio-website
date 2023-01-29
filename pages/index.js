@@ -13,9 +13,11 @@ import Copyright from '@/Components/Copyright'
 import { createClient } from 'next-sanity';
 import RecentPosts from '@/Components/post/RecentPosts'
 const inter = Inter({ subsets: ['latin'] })
+require("dotenv").config();
+
 const client = createClient({
-  projectId: "helkh138",
-  dataset: "production",
+  projectId: process.env.PROJECT_ID,
+  dataset: process.env.DATASET,
   apiVersion: "2022-03-25",
   useCdn: true
 });

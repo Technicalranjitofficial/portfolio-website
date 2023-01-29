@@ -2,9 +2,11 @@ import React from "react";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
 import { createClient } from 'next-sanity';
+require("dotenv").config();
+
 const client = createClient({
-  projectId: "helkh138",
-  dataset: "production",
+  projectId: process.env.PROJECT_ID,
+  dataset: process.env.DATASET,
   apiVersion: "2022-03-25",
   useCdn: true
 });

@@ -1,7 +1,9 @@
 import React from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
+import { motion } from "framer-motion";
 const RecentProjects = ({ projects, client }) => {
+  
   const builder = imageUrlBuilder(client);
   // const builder = imageUrlBuilder(client);
   function urlFor(source) {
@@ -16,12 +18,12 @@ const RecentProjects = ({ projects, client }) => {
         {projects &&
           projects.map((val, index) => {
             return (
-              <div
+              <motion.div drag
                 key={index}
                 className="mt-3 hover:scale-95 md:hover:scale-100 bg-slate-800 relative group   flex items-center rounded-md md:flex-row   flex-col w-full "
               >
                 <div className="flex flex-col md:flex-row items-center md:py-2">
-                  <div className="absolute -bottom-10 opacity-0 group-hover:bottom-0 group-hover:opacity-100 transition-all duration-100  z-50 bg-slate-900/75 w-full  h-full">
+                  <div className="absolute -bottom-10 opacity-0  group-hover:bottom-0 group-hover:opacity-100 transition-all duration-100  z-50 bg-slate-900/75 w-full  h-full">
                     <div className="w-full h-full flex items-center gap-4 justify-center">
                      <a href={`${val.demolink}`} target="_blank">
                       <button className=" text-slate-300 font-Alegreya font-semibold bg-green-800  px-4 py-2  hover:bg-green-700 hover:scale-110 rounded-tl-md rounded-br-md">
@@ -140,7 +142,7 @@ const RecentProjects = ({ projects, client }) => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
 

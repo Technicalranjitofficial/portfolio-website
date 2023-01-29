@@ -8,9 +8,11 @@ import Post from '@/Components/post/Post';
 import NewsLetter from '@/Components/NewsLetter';
 import Copyright from '@/Components/Copyright';
 
+require("dotenv").config();
+
 const client = createClient({
-  projectId: "helkh138",
-  dataset: "production",
+  projectId: process.env.PROJECT_ID,
+  dataset: process.env.DATASET,
   apiVersion: "2022-03-25",
   useCdn: false
 });

@@ -124,7 +124,7 @@ const handleOnCopy =async(code)=>{
             
             // const rel = value.url && !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
             return (
-              <a className="text-blue-500" href={value.url} rel={rel}>
+              <a className="text-blue-500" href={value.url} rel="noreferrer">
                 {children}
               </a>
             )

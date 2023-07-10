@@ -71,22 +71,13 @@ const Info = () => {
             </a>
           </div>
         </div>
-        <motion.div drag
-        dragConstraints={{
-            top: 0,
-            right: -10,
-            bottom: 300,
-            left: -300,
-        }}
-        dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-        dragElastic={0.7}
-        whileTap={{ cursor: "grabbing" }} className="mt-3 ">
+        <div className="mt-3 ">
           <img 
             className="h-auto animate-pulse w-72 max-w-sm mx-auto"
             src="https://creativedesignsguru.com/demo/astro-boilerplate/assets/images/avatar.svg"
             alt="img"
           />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

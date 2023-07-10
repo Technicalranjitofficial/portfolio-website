@@ -2,10 +2,10 @@ import React from "react";
 import { createClient} from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
-import { motion,useDragControls } from "framer-motion";
+// import { motion,useDragControls } from "framer-motion";
 const RecentProjects = ({ projects,client }) => {
 
-  const control = useDragControls();
+  // const control = useDragControls();
 
   // const client = createClient({
   //   projectId:process.env.PROJECT_ID&& process.env.PROJECT_ID,
@@ -14,11 +14,11 @@ const RecentProjects = ({ projects,client }) => {
   //   useCdn: true
   // });
 
-  const builder = imageUrlBuilder(client);
+
   // const builder = imageUrlBuilder(client);
-  function urlFor(source) {
-    return builder.image(source);
-  }
+  // function urlFor(source) {
+  //   return builder.image(source);
+  // }
 
 //   const attributes = isMobile ? {
 //     drag: "x",

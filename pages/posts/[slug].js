@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { createClient } from 'next-sanity';
+
 
 import NavBar from '@/Components/NavBar';
 import Post from '@/Components/post/Post';
@@ -10,15 +10,7 @@ import { useQuery } from '@apollo/client';
 import { SINGLE_POST } from '@/Services/graphql/query';
 import { useRouter } from 'next/router';
 
-// require("dotenv").config();
-
-// const client = createClient({
-//   projectId: process.env.PROJECT_ID,
-//   dataset: process.env.DATASET,
-//   apiVersion: "2022-03-25",
-//   useCdn: false
-// });
-const Posts = ({blogs,user}) => {
+const Posts = () => {
 
   const router = useRouter();
   const {slug} = router.query;
@@ -34,7 +26,7 @@ const Posts = ({blogs,user}) => {
     <div className='bg-slate-900'>
       <div className='mx-auto max-w-screen-lg px-3 py-6 '>
   <NavBar/>
-  {data && <Post user={user && user} blogs={data.allBlog[0]}/>}
+  {data && <Post  blogs={data.allBlog[0]}/>}
 
   {/* {data && console.log(data.allBlog[0])} */}
   <div className='border-t mt-7 border-gray-600 '></div>

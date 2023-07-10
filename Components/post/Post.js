@@ -18,15 +18,15 @@ import { BsCheck2 } from 'react-icons/bs';
 
 // import  docco  from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
 
-const serializers = {
-  types: {
-    code: (props) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-};
+// const serializers = {
+//   types: {
+//     code: (props) => (
+//       <pre data-language={props.node.language}>
+//         <code>{props.node.code}</code>
+//       </pre>
+//     ),
+//   },
+// };
 
 const Post = ({ blogs, client,user }) => {
   // const builder = imageUrlBuilder(client);
@@ -152,15 +152,15 @@ let  info;
         },
 
         marks: {
-          // link: ({children, value}) => {
+          link: ({children, value}) => {
             
-          //   // const rel = value.url && !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
-          //   return (
-          //     <a className="text-blue-500" href={value.url} rel={rel}>
-          //       {children}
-          //     </a>
-          //   )
-          // },
+            // const rel = value.url && !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
+            return (
+              <a className="text-blue-500" href={value.url} rel={rel}>
+                {children}
+              </a>
+            )
+          },
           color:(props)=>(
           //  props
           // console.log("present",props)

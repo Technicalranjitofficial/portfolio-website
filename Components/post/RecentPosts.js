@@ -2,12 +2,7 @@ import React from "react";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
 import { createClient } from 'next-sanity';
-const client = createClient({
-  projectId: process.env.PROJECT_ID,
-  dataset: process.env.DATASET,
-  apiVersion: "2022-03-25",
-  useCdn: true
-});
+
 const builder = imageUrlBuilder(client);
 // const builder = imageUrlBuilder(client);
 function urlFor(source) {

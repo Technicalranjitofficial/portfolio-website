@@ -33,12 +33,13 @@ const RecentPosts = ({ blogs }) => {
             <div className=" aspect-w-3 aspect-h-2">
               <img
                 className="object-cover md:max-h-52 h-full w-full object-center"
-                src={urlFor(val.poster)
-                  .image(val.poster)
-                  .width('800')
-                  .fit("max")
-                  .auto("format")
-                  .url()}
+                // src={urlFor(val.poster)
+                //   .image(val.poster)
+                //   .width('800')
+                //   .fit("max")
+                //   .auto("format")
+                //   .url()}
+                src={val.poster.asset.url}
                 alt="img"
               />
             </div>
@@ -46,17 +47,10 @@ const RecentPosts = ({ blogs }) => {
               {val.title}
             </h1>
             <span className="items-center flex justify-center text mt-1 text-xs text-slate-400 font-Lato">
-              Feb 6,2020
+             {val.createdAt}
             </span>
             <p className="mt-1 text-center px-2 text-xs md:text-sm text-gray-300  line-clamp-3 font-RobotoSlab">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-              aperiam corporiscorporiscorporiscorporiscorporis, corrupti, ex
-              ea quam qui, assumenda dolore cum . aperiam corporis, corrupti,
-              ex ea quam qui, assumenda dolore cum . aperiam corporis,
-              corrupti, ex ea quam qui, assumenda dolore cum . aperiam
-              corporis, corrupti, ex ea quam qui, assumenda dolore cum .
-              aperiam corporis, corrupti, ex ea quam qui, assumenda dolore cum
-              .
+              {val.description}
             </p>
             <div className="mb-4"></div>
           </div>

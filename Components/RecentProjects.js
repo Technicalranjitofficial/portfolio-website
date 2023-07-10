@@ -29,9 +29,7 @@ const RecentProjects = ({ projects,client }) => {
   return (
     <div className="flex justify-center mt-6">
       <div className="flex flex-col w-full">
-        <span className="text-white font-bold text-xl md:text-2xl font-Alegreya">
-          Recent <span className="text-cyan-500">Projects</span>
-        </span>
+       
         {projects &&
           projects.map((val, index) => {
             return (
@@ -58,7 +56,8 @@ const RecentProjects = ({ projects,client }) => {
                   </div>
                   <img
                     className="max-h-32  animate-bounce max-w-96 hover:translate-y-1 cursor-pointer"
-                    src={urlFor(val.projectImage).url()}
+                    // src={urlFor(val.projectImage).url()}
+                    src={val.projectImage.asset.url}
                     alt="img"
                   />
 
@@ -68,7 +67,7 @@ const RecentProjects = ({ projects,client }) => {
                         {val.title}
                       </span>
                       <div className="ml-2 md:mt-0 mt-2 flex">
-                        {val.tags.map((tg, ind) => {
+                        {val.tags && val.tags.map((tg, ind) => {
                           switch (tg) {
                             case "Javascript":
                               return (

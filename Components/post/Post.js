@@ -1,5 +1,5 @@
 import { PortableText } from "@portabletext/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import urlBuilder from "@sanity/image-url";
 import imageUrlBuilder from "@sanity/image-url";
@@ -7,6 +7,14 @@ import imageUrlBuilder from "@sanity/image-url";
 const BlockContent = require("@sanity/block-content-to-react");
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Header from "../Header";
+import { github } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { dark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { GoCopy } from 'react-icons/go';
+import { BsCheck2 } from 'react-icons/bs';
+
+
 
 // import  docco  from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
 
@@ -21,13 +29,32 @@ const serializers = {
 };
 
 const Post = ({ blogs, client,user }) => {
-  const builder = imageUrlBuilder(client);
+  // const builder = imageUrlBuilder(client);
+  const [copid,setCopied] = useState(true);
 
+  // const code = useRef(null);
 
+const handleOnCopy =async(code)=>{
+
+//   const range = document.createRange();
+//   range.selectNode(code);
+//   window.getSelection().removeAllRanges();
+//   window.getSelection().addRange(range);
+// console.log(code.current,range);
+//   document.execCommand('copy');
+//   window.getSelection().removeAllRanges();
+
+  // console.log("code",code.classList.value);
+  navigator.clipboard.writeText(code);
+  setCopied(false);
+  setTimeout(() => {
+    setCopied(true);
+  }, 1000);
+}
   
-  console.log("blogs",blogs.content);
-  console.log("created",blogs.CreatedAt);
-  console.log("user",user.title)
+  // console.log("blogs",blogs.);
+  // console.log("created",blogs.CreatedAt);
+  // console.log("user",user.title)
 let  info;
   if(user){
    info ={
@@ -38,23 +65,25 @@ let  info;
   }
   
 
-  function urlFor(source) {
-    return builder.image(source);
-  }
+  // function urlFor(source) {
+  //   return builder.image(source);
+  // }
   const SampleImageComponent = (value) => {
    
-    const { width, height } = getImageDimensions(value);
+    // const { width, height } = getImageDimensions(value);
 
     // console.log("url", urlFor(value).url());
     return (
       <div className="justify-center flex rounded-md">
         <img className="rounded-md"
-          src={urlFor(value)
-            .image(value)
-            .width('800')
-            .fit("max")
-            .auto("format")
-            .url()}
+          // src={urlFor(value)
+          //   .image(value)
+          //   .width('800')
+          //   .fit("max")
+          //   .auto("format")
+          //   .url()}
+
+          src={blogs.poster.asset.url}
           alt={value.alt || "hellow"}
           loading="lazy"
           style={{
@@ -73,20 +102,31 @@ let  info;
       </div> */}
 
       <div className="">
-        <Header urlFor={urlFor} value={blogs.poster} info={info && info}/>
+        <Header   value={blogs.poster} info={{
+      createdAt:blogs.createdAt&&blogs.createdAt,
+      postedBy:blogs.user.title,
+      poster:blogs.poster.asset.url
+  
+    }}/>
       </div>
       <div className='border-t mt-7 border-gray-600 '></div>
       <div className="md:px-2 md:border-l-2 border-slate-500 md:border-r-2 md:border-b-2" >
       <PortableText
       
-      value={blogs.content}
+      value={blogs.contentRaw}
       components={{
         types: {
           image: (props) => SampleImageComponent(props.value),
           code: (props) => (
-              <SyntaxHighlighter className="rounded-md mt-2 mb-2"language="javascript" >
+             <div className="relative group">
+              <button onClick={()=>handleOnCopy(props.value.code)} className="absolute right-5 top-2 border group-hover:opacity-100 border-slate-400 p-2 rounded-md opacity-0 transition-opacity duration-100 hover:bg-gray-600 text-white">{copid?<GoCopy size={20}/>:<BsCheck2 className="text-green-300" size={20}/>}</button>
+              <div >
+              <SyntaxHighlighter showLineNumbers wrapLongLines  style={atomOneDark} id="code" className="rounded-md bg-red-400 mt-2 mb-2"language="javascript" >
               {props.value.code}
+              {console.log(props)}
             </SyntaxHighlighter>
+              </div>
+             </div>
 
           ),
 
@@ -114,7 +154,7 @@ let  info;
         marks: {
           link: ({children, value}) => {
             
-            const rel = !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
+            const rel = value.url && !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
             return (
               <a className="text-blue-500" href={value.url} rel={rel}>
                 {children}

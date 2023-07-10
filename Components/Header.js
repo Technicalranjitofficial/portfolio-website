@@ -1,17 +1,19 @@
 import React from 'react'
 
-const Header = ({urlFor,value,info}) => {
-    console.log(info)
+const Header = ({info}) => {
+    // console.log(info)
   return (
     <div className='flex flex-col w-full border-t-2 border-l-2 border-r-2 border-b-2 md:border-b-0 border-slate-500 mt-4 rounded-t-md'>
         <div className="justify-center items-center w-full flex">
         <img
-          src={urlFor(value)
-            .image(value)
-            .fit("max")
-            .auto("format")
-            .url()}
-          alt={value.alt || "hellow"}
+          // src={urlFor(value)
+          //   .image(value)
+          //   .fit("max")
+          //   .auto("format")
+          //   .url()}
+
+          src={info.poster}
+          // alt={value.alt || "hellow"}
           loading="lazy"
          
         />

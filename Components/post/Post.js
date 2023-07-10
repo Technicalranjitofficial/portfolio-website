@@ -89,7 +89,7 @@ const handleOnCopy =async(code)=>{
              <div className="relative group">
               <button onClick={()=>handleOnCopy(props.value.code)} className="absolute right-5 top-2 border group-hover:opacity-100 border-slate-400 p-2 rounded-md opacity-0 transition-opacity duration-100 hover:bg-gray-600 text-white">{copid?<GoCopy size={20}/>:<BsCheck2 className="text-green-300" size={20}/>}</button>
               <div >
-              <SyntaxHighlighter showLineNumbers wrapLongLines  style={atomOneDark} id="code" className="rounded-md bg-red-400 mt-2 mb-2"language="javascript" >
+              <SyntaxHighlighter showLineNumbers   style={atomOneDark} id="code" className="rounded-md bg-red-400 mt-2 mb-2"language="javascript" >
               {props.value.code}
               {console.log(props)}
             </SyntaxHighlighter>

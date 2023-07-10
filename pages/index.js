@@ -1,7 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+
 import NavBar from '@/Components/NavBar'
 import RecentProjects from '@/Components/RecentProjects'
 // import RecentPosts from '@/Components/posts/RecentPosts'
@@ -10,29 +7,22 @@ import NewsLetter from '@/Components/NewsLetter'
 import Copyright from '@/Components/Copyright'
 // import Navbar from '@/Components/Navbar'
 
-import { createClient } from 'next-sanity';
+
 import RecentPosts from '@/Components/post/RecentPosts'
-import Skills from '@/Components/Skills'
-import Post from '@/Components/post/Post'
+
 import { useQuery } from '@apollo/client'
 import { GET_POST_MAIN } from '@/Services/graphql/query'
-const inter = Inter({ subsets: ['latin'] })
-// require("dotenv").config();
-
-// const client = createClient({
-//   projectId: process.env.PROJECT_ID,
-//   dataset: process.env.DATASET,
-//   apiVersion: "2022-03-25",
-//   useCdn: true
-// });
 
 
 
-export default function Home({blogs,projects}) {
+export default function Home() {
 
   const {data,error,loading} = useQuery(GET_POST_MAIN,{variables:{limit:10}});
   if(loading){
     console.log("loading...");
+  }
+  if(error){
+    console.log(error);
   }
 
   if(data){
@@ -68,17 +58,3 @@ export default function Home({blogs,projects}) {
   )
 }
 
-// export async function getServerSideProps(){
- 
-//   const blogs = await client.fetch(`*[_type == "blog"]`);
-//   const projects = await client.fetch(`*[_type == "Project"]`)
-//   // console.log("project",projects);
-
-//   console.log(blogs);
-//   return{
-//     props:{
-//       blogs,
-//       projects
-//     }
-//   }
-// }

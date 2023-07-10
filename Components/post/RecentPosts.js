@@ -1,14 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import imageUrlBuilder from "@sanity/image-url";
-import { createClient } from 'next-sanity';
 
-const builder = imageUrlBuilder(client);
-// const builder = imageUrlBuilder(client);
-function urlFor(source) {
-  return builder.image(source);
 
-}
 const RecentPosts = ({ blogs }) => {
   return (
     <div className="flex justify-center mt-6">

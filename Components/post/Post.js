@@ -1,15 +1,9 @@
 import { PortableText } from "@portabletext/react";
-import React, { useEffect, useRef, useState } from "react";
-import { getImageDimensions } from "@sanity/asset-utils";
-import urlBuilder from "@sanity/image-url";
-import imageUrlBuilder from "@sanity/image-url";
-// import PortableText from 'react-portable-text';
-const BlockContent = require("@sanity/block-content-to-react");
+import React, {  useState } from "react";
+
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Header from "../Header";
-import { github } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { dark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+
 import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { GoCopy } from 'react-icons/go';
 import { BsCheck2 } from 'react-icons/bs';
@@ -28,7 +22,7 @@ import { BsCheck2 } from 'react-icons/bs';
 //   },
 // };
 
-const Post = ({ blogs, client,user }) => {
+const Post = ({ blogs }) => {
   // const builder = imageUrlBuilder(client);
   const [copid,setCopied] = useState(true);
 
@@ -36,15 +30,7 @@ const Post = ({ blogs, client,user }) => {
 
 const handleOnCopy =async(code)=>{
 
-//   const range = document.createRange();
-//   range.selectNode(code);
-//   window.getSelection().removeAllRanges();
-//   window.getSelection().addRange(range);
-// console.log(code.current,range);
-//   document.execCommand('copy');
-//   window.getSelection().removeAllRanges();
 
-  // console.log("code",code.classList.value);
   navigator.clipboard.writeText(code);
   setCopied(false);
   setTimeout(() => {
@@ -52,27 +38,9 @@ const handleOnCopy =async(code)=>{
   }, 1000);
 }
   
-  // console.log("blogs",blogs.);
-  // console.log("created",blogs.CreatedAt);
-  // console.log("user",user.title)
-let  info;
-  if(user){
-   info ={
-      createdAt:blogs.createdAt&&blogs.createdAt,
-      postedBy:user.title
-  
-    }
-  }
-  
-
-  // function urlFor(source) {
-  //   return builder.image(source);
-  // }
-  const SampleImageComponent = (value) => {
+ 
+  const SampleImageComponent = () => {
    
-    // const { width, height } = getImageDimensions(value);
-
-    // console.log("url", urlFor(value).url());
     return (
       <div className="justify-center flex rounded-md">
         <img className="rounded-md"
@@ -84,12 +52,12 @@ let  info;
           //   .url()}
 
           src={blogs.poster.asset.url}
-          alt={value.alt || "hellow"}
+          // alt={value.alt || "hellow"}
           loading="lazy"
-          style={{
-            // Avoid jumping around with aspect-ratio CSS property
-            aspectRatio: width / height,
-          }}
+          // style={{
+          //   // Avoid jumping around with aspect-ratio CSS property
+          //   // aspectRatio: width / height,
+          // }}
         />
       </div>
     );
@@ -112,7 +80,7 @@ let  info;
       <div className='border-t mt-7 border-gray-600 '></div>
       <div className="md:px-2 md:border-l-2 border-slate-500 md:border-r-2 md:border-b-2" >
       <PortableText
-      
+
       value={blogs.contentRaw}
       components={{
         types: {

@@ -152,15 +152,15 @@ let  info;
         },
 
         marks: {
-          link: ({children, value}) => {
+          // link: ({children, value}) => {
             
-            const rel = value.url && !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
-            return (
-              <a className="text-blue-500" href={value.url} rel={rel}>
-                {children}
-              </a>
-            )
-          },
+          //   // const rel = value.url && !value.url.startsWith('/') ? 'noreferrer noopener' : undefined
+          //   return (
+          //     <a className="text-blue-500" href={value.url} rel={rel}>
+          //       {children}
+          //     </a>
+          //   )
+          // },
           color:(props)=>(
           //  props
           // console.log("present",props)

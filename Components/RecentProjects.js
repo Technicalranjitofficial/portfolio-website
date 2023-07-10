@@ -10,7 +10,7 @@ const RecentProjects = ({ projects }) => {
         {projects &&
           projects.map((val, index) => {
             return (
-              <motion.div 
+              <div 
 
               
                 key={index}
@@ -137,7 +137,7 @@ const RecentProjects = ({ projects }) => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
 

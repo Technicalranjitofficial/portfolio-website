@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Router from 'next/router';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../Services/graphql';
+import { Provider } from 'react-redux';
+import { store } from '@/Redux/store/store';
 
 
 export default function App({ Component, pageProps }) {
@@ -21,10 +23,13 @@ export default function App({ Component, pageProps }) {
   })
   return(
     <>
+
+    <Provider store={store}>
     <ApolloProvider client={client}>
    {loading &&  <Loader/>}
     <Component {...pageProps} />
     </ApolloProvider>
+    </Provider>
     </>
   )
 }

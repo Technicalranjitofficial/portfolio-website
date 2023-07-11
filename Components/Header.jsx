@@ -1,3 +1,4 @@
+import { convertDate } from '@/Redux/helper/Other'
 import React from 'react'
 
 const Header = ({info}) => {
@@ -21,7 +22,7 @@ const Header = ({info}) => {
     <div className='mt-6 mb-6'>
       <h1 className='text-white ml-1 font-bold text-2xl md:text-3xl font-Alegreya'> Microsoft PowerPoint 2021 For Free </h1>
       <div className='mt-1'>
-        <span className='ml-2 font-Montserrat text-xs md:text-sm text-white'>{info.createdAt}</span>
+        <span className='ml-2 font-Montserrat text-xs md:text-sm text-white'>{convertDate(info.createdAt)}</span>
         <span className='ml-2 font-Montserrat text-xs md:text-sm text-white'>Leave A reply</span>
         <span className='ml-2 font-Montserrat text-xs md:text-sm text-white'>Posted by: <span className='text-cyan-500 font-Alegreya font-semibold'>{info.postedBy}</span></span>
         

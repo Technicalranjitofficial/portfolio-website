@@ -4,44 +4,40 @@ import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
-    <nav className="bg-slate-900 flex justify-between ">
-      <motion.div
+    <nav className="bg-slate-900 flex justify-between  w-full mx-auto">
+      <div
         
-        className="z-50"
-        drag
-        dragConstraints={{
-            top: 0,
-            right: 300,
-            bottom: 300,
-            left: -10,
-        }}
-        dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-        dragElastic={0.7}
-        whileTap={{ cursor: "grabbing" }}
       >
         <span className="text-cyan-500 font-bold text-3xl font-Roboto ">
           Ranjit Das
         </span>
-      </motion.div>
+      </div>
       <div className="items-center  hidden sm:flex">
         <Link
-          href="/ind"
-          className="mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya "
+          href="/"
+          className="mx-2 text-slate-300 items-center hover:text-slate-400 font-bold font-xl font-Alegreya "
         >
           Home
         </Link>
-        <a
-          href=""
+        <Link
+          href="/about"
           className="mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya"
         >
           About
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+          href="/cv"
           className="mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya"
         >
           CV
-        </a>
+        </Link>
+        <Link
+          href="/blogs"
+          className="mx-2 text-slate-300 items-center hover:text-slate-400 font-semibold font-xl font-Alegreya"
+        >
+          Blogs
+        </Link>        
+
       </div>
     </nav>
   );
